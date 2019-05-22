@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "NHL Game-day",
+  "version": "0.1",
+  "description": "View information on today's NHL games.",
+
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "images/icon.png"
+  },
+
+  "background": {
+    "scripts": ["popup.js"],
+    "persistent": false
+  },
+  
+  "permissions": ["<all_urls>"]
+}
