@@ -12,11 +12,13 @@ window.onload = function () {
 
       if (request.status >= 200 && request.status < 400) {
 
-        console.log(obj.totalItems)
+        if(obj.totalItems != 0){
         document.getElementById("user").innerHTML =
           "Home Team: " + obj.dates[0].games[0].teams.home.team.name + " (" + obj.dates[0].games[0].teams.home.leagueRecord.wins + "/" + obj.dates[0].games[0].teams.home.leagueRecord.losses + "/" + obj.dates[0].games[0].teams.home.leagueRecord.ot + ")<br><br>" +
           "Away Team: " + obj.dates[0].games[0].teams.away.team.name + " (" + obj.dates[0].games[0].teams.away.leagueRecord.wins + "/" + obj.dates[0].games[0].teams.away.leagueRecord.losses + "/" + obj.dates[0].games[0].teams.away.leagueRecord.ot + ")";
-
+      } else{
+        document.getElementById("user").innerHTML = "No games today!"
+      }
       } else {
         console.log('error')
       }
